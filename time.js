@@ -60,5 +60,22 @@ function atualizarPlot(dataset){
 		.attr("cy", d=>d.Duration+400)
 		.attr("r", d=>Math.sqrt(d.Duration*4/Math.PI)*3)
 		.style("fill", "red")
-		.style("fill-opacity", .5);
+		.style("fill-opacity", .5).on("click", function(){
+		d3.select(this).attr("fill","orange");
+	});
+
+	var texto = mySVG
+		.selectAll("text")
+		.data(dataset)
+		.enter()
+		.append("text")
+		.attr("x", d=>x(d.Begin))
+		.attr("y", d=>d.Duration+400);
+
+	circle.on("mouseover", function(){
+		d3.select(this).style("fill", "blue");
+	})
+	.on("mouseout", function(){
+		d3.select(this).style("fill", "red");
+	});
 }
