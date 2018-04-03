@@ -27,29 +27,7 @@ function atualizarPlot(dataset){
 
     xAxisGroup.call(xAxis);
 
-    /*var rec = mySVG
-    	.selectAll("rect")
-    	.data(dataset)
-    	.enter()
-    	.append("rect")
-    	.attr("x", d=>x(d.Begin))
-    	.attr("y", 450)
-    	.attr("width", d=>d.Duration)
-		.attr("height", 25)
-		.style("fill", "red")
-		.style("fill-opacity", .5);
-
-	var line = mySVG
-		.append("g")
-		.selectAll("rect")
-		.data(dataset)
-		.enter()
-		.append("rect")
-		.attr("x", d=>x(d.Begin))
-		.attr("y", 450)
-		.attr("width", 2)
-		.attr("height", 25)
-		.style("fill", "red");*/
+	var opacity = .5;
 
 	var circle = mySVG
 		.selectAll("circle")
@@ -60,22 +38,39 @@ function atualizarPlot(dataset){
 		.attr("cy", d=>d.Duration+400)
 		.attr("r", d=>Math.sqrt(d.Duration*4/Math.PI)*3)
 		.style("fill", "red")
-		.style("fill-opacity", .5).on("click", function(){
-		d3.select(this).attr("fill","orange");
-	});
+		.style("fill-opacity", opacity);
 
-	var texto = mySVG
+	/*var texto = mySVG
 		.selectAll("text")
 		.data(dataset)
 		.enter()
 		.append("text")
 		.attr("x", d=>x(d.Begin))
-		.attr("y", d=>d.Duration+400);
+		.attr("y", d=>d.Duration+400)
+		.style("visibility", "hidden");*/
 
-	circle.on("mouseover", function(){
-		d3.select(this).style("fill", "blue");
-	})
-	.on("mouseout", function(){
-		d3.select(this).style("fill", "red");
-	});
+	var tip = d3.tip().attr("class", "d3-tip").html(d => d.Begin);
+	circle.call(tip);
+
+	circle
+		.on("mouseover", function(){
+			d3.select(this).attr("r", d=>Math.sqrt(d.Duration*4/Math.PI)*4);
+		})
+		.on("mouseout", function(){
+			d3.select(this).attr("r", d=>Math.sqrt(d.Duration*4/Math.PI)*3);
+		})
+		.on("click", function(d){
+			if(opacity == .5){
+				opacity = 1;
+				tip.show;
+			}
+			else{
+				opacity = .5;
+				tip.hide;
+			}
+			//opacity = opacity == .5 ? 1 : .5;
+			d3.select(this).style("fill-opacity", opacity);
+
+		});
+
 }
