@@ -25,10 +25,10 @@ function analyze(error, england, france, autor){
 }
 var m = {top:20, right:15, bottom:20, left:15};
 
-var mySvg = d3.select("svg").attr("transform", "translate(150,150)");
-var England = mySvg.append("g").attr("transform", "translate(10,0)");
-var France = mySvg.append("g").attr("transform", "translate(10,0)");
-var Autor = mySvg.append("g").attr("transform", "translate(10,0)");
+var mySvg = d3.select("svg");
+var England = mySvg.append("g").attr("transform", "translate(100,150)");
+var France = mySvg.append("g").attr("transform", "translate(100,150)");
+var Autor = mySvg.append("g").attr("transform", "translate(100,150)");
 
 function atualizarPlot(england, france, autor){
 	var timeBegin = 700,
@@ -40,7 +40,7 @@ function atualizarPlot(england, france, autor){
     var xAxisGroup = mySvg
     	.append("g")
     	.attr("class","xAxis")
-    	.attr("transform","translate(10,500)");
+    	.attr("transform","translate(100,650)");
     xAxisGroup.call(xAxis);
 
 	var opacity = .5;
@@ -85,7 +85,7 @@ function atualizarPlot(england, france, autor){
 	acao(circleF);
 
 	circleA
-		.attr("cy", d=>d.Duration*4-100)
+		.attr("cy", d=>d.Duration*4-200)
 		.attr("r", d=>Math.sqrt(d.Duration*4/Math.PI)*2)
 		.style("fill", d=>(colour(d.Begin)))
 		.on("mouseover", function(d){
