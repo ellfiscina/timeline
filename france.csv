@@ -1,40 +1,4 @@
 Name,Begin,End
-Louis I,814,840
-Charles II,840,877
-Louis II,877,879
-Louis III,879,882
-Carloman,879,884
-Charles de Fat,884,888
-Eudes,888,898
-Charles III,898,922
-Robert I,922,923
-Raoul,923,936
-Louis IV,936,954
-Lothar,954,986
-Louis V,986,987
-Hugh Capet,987,996
-Robert II,996,1031
-Henry I,1031,1060
-Philip I,1060,1108
-Louis VI,1108,1137
-Louis VII,1137,1180
-Philip II Augustus,1180,1223
-Louis VIII,1223,1226
-Louis IX,1226,1270
-Philip III,1270,1285
-Philip IV,1285,1314
-Louis X,1314,1316
-John 1,1316,1316
-Philip V,1316,1322
-Charles IV,1322,1328
-Philip VI,1328,1350
-John II,1350,1364
-Charles V,1364,1380
-Charles VI,1380,1422
-Charles VII,1422,1461
-Louis XI,1461,1483
-Charles VIII,1483,1498
-Louis XII,1498,1515
 Francis I,1515,1547
 Henry II,1547,1559
 Francis II,1559,1560
@@ -47,8 +11,6 @@ Louis XV,1715,1774
 Louis XVI,1774,1792
 Primeira República,1792,1804
 Napoleon I,1804,1814
-Louis XVIII,1814,1815
-Napoleon I,1815,1815
 Louis XVIII,1814,1824
 Charles X,1824,1830
 Louis Philippe,1830,1848
