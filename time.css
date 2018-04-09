@@ -30,3 +30,25 @@
 svg{
   border: 1px solid black;
 }
+
+.square{
+  border: 1px solid black;
+  height: 15px;
+  width: 15px;
+  opacity: .5;
+  float: left;
+  margin-right: 10px;
+}
+
+#red{
+  background-color: red;
+}
+
+#blue{
+  background-color: blue;
+}
+
+#colored{
+  background-image: linear-gradient(to right, 
+    #1f77b4, #ff7f0e, #2ca02c, #9467bd, #bcbd22);
+}
